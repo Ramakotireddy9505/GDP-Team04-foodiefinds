@@ -1,0 +1,7 @@
+1.To determine the number of available seats for reservation in FoodieFinds:
+Reservation System:
+Manage reservations with dates, times, and guest counts.
+Maintain tables with varying capacities.
+Availability Calculation:
+Query existing reservations for a given date and time.
+Calculate available seats by subtracting booked seats from total table capacity.
