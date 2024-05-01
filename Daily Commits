@@ -17,3 +17,5 @@ Our software seeks to give customers a simple method to take advantage of delici
 
 4.This update enables the system to adjust restaurant ratings when users leave positive reviews. Now, when diners share their positive experiences, the restaurant's overall rating will reflect this feedback accurately. 
 This enhancement aims to improve the reliability of restaurant ratings, making it easier for users to find top-quality dining options on FoodieFinds.
+
+5. We've opted for role-based login for users accessing our application.
