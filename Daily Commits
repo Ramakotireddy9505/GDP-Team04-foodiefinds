@@ -14,3 +14,6 @@ Your user/admin information is not just stored securely but actively defended ag
 3.Our web application allows users to easily book a table at their preferred restaurants.Users may easily browse through a wide selection of restaurants options, choose the goods they want.
 Users can also just book a table at the time and date of their choice, guaranteeing a wonderful meal.
 Our software seeks to give customers a simple method to take advantage of delicious cuisine and dining experiences whenever it's convenient for them.
+
+4.This update enables the system to adjust restaurant ratings when users leave positive reviews. Now, when diners share their positive experiences, the restaurant's overall rating will reflect this feedback accurately. 
+This enhancement aims to improve the reliability of restaurant ratings, making it easier for users to find top-quality dining options on FoodieFinds.
