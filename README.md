@@ -20,3 +20,8 @@ Date, time, and party size selection options are available on the reservation in
 The app is connected with real-time availability and menu changes from restaurant APIs. 
 Customers can view the most recent details on available tables and menu items. 
 User Preferences: The software makes restaurant recommendations in accordance with the user's tastes and previous eating experiences. 
+
+---
+**Interface Requirements**:
+Restaurant search with filters for cuisine type, price range, and ratings.Restaurant profiles with photos, menus, and reviews.
+Reservation interface with date, time, and party size selection options.
