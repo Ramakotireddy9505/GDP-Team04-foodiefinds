@@ -22,3 +22,5 @@ This enhancement aims to improve the reliability of restaurant ratings, making i
 
 -- We have initiated the process of gathering requirements for the project.
 -- we gather the information about the project and preparing the document for the project
+--The app should offer restaurant recommendations based on user preferences and past dining history.
+--Recommendations should be tailored to each user's taste and dining habits.
