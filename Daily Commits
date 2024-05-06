@@ -63,6 +63,11 @@ The application architecture should be planned to handle future increases in the
 With the option to add more server instances or cloud resources as needed, horizontal scaling should be provided to accommodate rising concurrent user activity.
 To expand specific components, like databases and application servers, to effectively handle increased traffic, vertical scaling methods need to be in place.
 To prevent performance bottlenecks and spread incoming traffic evenly across several server instances, load balancing solutions should be put into practice.
-
+8.User Experience (UX):
+Make sure the app works well no matter what device people are using. It should be easy for users to find what they're looking for and complete their purchases smoothly. Also, include features that make the app accessible to people with disabilities.
+9.Compatibility:
+Test the app on different types of Android and iOS devices to ensure it works on all of them. It should look good and function properly on screens of various sizes and shapes, and with different hardware setups.
+10.Usability:
+Design the app's interface to be easy to understand and visually appealing. Provide clear labels and instructions, and give users feedback about what the app is doing, like error messages and loading indicators.
 
 
