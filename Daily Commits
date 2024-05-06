@@ -27,3 +27,9 @@ This enhancement aims to improve the reliability of restaurant ratings, making i
 
 6.Secure user authentication is critical to protect personal dining preferences and ensure user privacy.
 Reservation and payment information must be encrypted to facilitate secure transactions.So the customer satisfaction will be gained.
+
+
+
+----Non Functional requirements--->
+1) Performance: Rapid loading, Seamless interaction, Swift response, Peak performance under load.
+2)Security: Protected authentication, Encrypted data, Defense against breaches.
