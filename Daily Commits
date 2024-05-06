@@ -46,5 +46,14 @@ Automated backup and restore procedures should be routinely observed to ensure t
 Compatibility with various devices, operating systems, and web browsers to reach a broader audience. 
 Integration with external APIs and services to support real-time updates for menus, availability, and reservations.
 Adherence to industry standards and best practices to ensure interoperability with existing systems and technologies.
+6. Availability:
+Users must always be able to use the app, even during brief maintenance or update windows.
+To guarantee ongoing availability even in the case of server failures or network disruptions, redundant server infrastructure and failover procedures should be in place.
+7. Scalability
+The application architecture should be planned to handle future increases in the number of users and the size of the product catalog.
+With the option to add more server instances or cloud resources as needed, horizontal scaling should be provided to accommodate rising concurrent user activity.
+To expand specific components, like databases and application servers, to effectively handle increased traffic, vertical scaling methods need to be in place.
+To prevent performance bottlenecks and spread incoming traffic evenly across several server instances, load balancing solutions should be put into practice.
+
 
 
