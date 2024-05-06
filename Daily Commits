@@ -42,3 +42,9 @@ Backup schedules and retention policies should be established to guarantee that 
 Point-in-time recovery techniques must be put into place to enable the program to be restored to a particular state prior to data corruption or unintentional deletions.
 Backup data should be safely kept off-site or in cloud storage services to guard against calamities like fire, theft, or server failures.
 Automated backup and restore procedures should be routinely observed to ensure their efficacy and quickly address any problems or malfunctions.
+5. Compatibility:
+Compatibility with various devices, operating systems, and web browsers to reach a broader audience. 
+Integration with external APIs and services to support real-time updates for menus, availability, and reservations.
+Adherence to industry standards and best practices to ensure interoperability with existing systems and technologies.
+
+
