@@ -25,6 +25,8 @@ This enhancement aims to improve the reliability of restaurant ratings, making i
 --The app should offer restaurant recommendations based on user preferences and past dining history.
 --Recommendations should be tailored to each user's taste and dining habits.
 
+
+
 6.Secure user authentication is critical to protect personal dining preferences and ensure user privacy.
 Reservation and payment information must be encrypted to facilitate secure transactions.So the customer satisfaction will be gained.
 
@@ -70,4 +72,4 @@ Test the app on different types of Android and iOS devices to ensure it works on
 10.Usability:
 Design the app's interface to be easy to understand and visually appealing. Provide clear labels and instructions, and give users feedback about what the app is doing, like error messages and loading indicators.
 
-
+->Developing the necessary APIs for this project.
