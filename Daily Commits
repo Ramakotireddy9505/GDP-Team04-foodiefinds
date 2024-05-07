@@ -73,3 +73,5 @@ Test the app on different types of Android and iOS devices to ensure it works on
 Design the app's interface to be easy to understand and visually appealing. Provide clear labels and instructions, and give users feedback about what the app is doing, like error messages and loading indicators.
 
 ->Developing the necessary APIs for this project.
+
+Allow users and admins to log in and confirm their identity to access the application features.Users and admins enter their email, phone number, and password.Credentials are securely stored in Firebase database.
