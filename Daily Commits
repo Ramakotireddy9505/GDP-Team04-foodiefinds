@@ -89,6 +89,10 @@ Initiate communication with restaurant APIs to fetch data.
 Retrieve and process up-to-date information regarding restaurant availability and menu alterations.
 Present real-time updates on available tables and menu items to users.
 
+--->Restaurant Search
+Objective: Users can search for restaurants based on ratings and preferred cuisines.
+Integrated restaurant search function with keyword and filter options, enhancing user experience in finding preferred dining choices.
+
 
 
 
