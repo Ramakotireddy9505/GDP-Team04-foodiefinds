@@ -83,6 +83,13 @@ Users find top-rated restaurants; admins add new ones seamlessly.Users navigate 
 Smooth browsing experience for users; easy restaurant addition for admins.
 
 
+--->Restaurant availability
+Establish connectivity with restaurant APIs to retrieve real-time data on availability and menu changes.
+Initiate communication with restaurant APIs to fetch data.
+Retrieve and process up-to-date information regarding restaurant availability and menu alterations.
+Present real-time updates on available tables and menu items to users.
+
+
 
 
 
