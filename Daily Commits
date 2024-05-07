@@ -75,3 +75,16 @@ Design the app's interface to be easy to understand and visually appealing. Prov
 ->Developing the necessary APIs for this project.
 
 Allow users and admins to log in and confirm their identity to access the application features.Users and admins enter their email, phone number, and password.Credentials are securely stored in Firebase database.
+
+--->Browsing Restaurants and Adding Restaurants
+
+Users find top-rated restaurants; admins add new ones seamlessly.Users navigate and search; admins add restaurants effortlessly.
+
+Smooth browsing experience for users; easy restaurant addition for admins.
+
+
+
+
+
+
+
