@@ -93,6 +93,8 @@ Present real-time updates on available tables and menu items to users.
 Objective: Users can search for restaurants based on ratings and preferred cuisines.
 Integrated restaurant search function with keyword and filter options, enhancing user experience in finding preferred dining choices.
 
+----->User Data Storage: Implement a database schema to securely store user information such as user ID, username, email, encrypted passwords, location, dining preferences, and past dining history. 
+Ensure proper encryption techniques are applied to sensitive data fields.
 
 
 
