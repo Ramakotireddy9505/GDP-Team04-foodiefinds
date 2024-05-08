@@ -97,6 +97,10 @@ Integrated restaurant search function with keyword and filter options, enhancing
 Ensure proper encryption techniques are applied to sensitive data fields.
 
 
+----
+Restaurant Data Storage: Design a data structure to store restaurant details including restaurant ID, name, location, cuisine type, price range, ratings, menu items, photos, and reviews. Use appropriate indexing for efficient retrieval of restaurant information.
+
+
 
 
 
