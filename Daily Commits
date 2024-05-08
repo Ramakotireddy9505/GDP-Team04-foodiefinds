@@ -100,6 +100,9 @@ Ensure proper encryption techniques are applied to sensitive data fields.
 ----
 Restaurant Data Storage: Design a data structure to store restaurant details including restaurant ID, name, location, cuisine type, price range, ratings, menu items, photos, and reviews. Use appropriate indexing for efficient retrieval of restaurant information.
 
+--->Prototypes
+Implemented user registration and authentication, including validation checks and secure data storage. Added browsing functionality for users to find restaurants and for admins to add new ones. Enabled connectivity to restaurant APIs for real-time updates.
+
 
 
 
