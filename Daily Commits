@@ -103,6 +103,7 @@ Restaurant Data Storage: Design a data structure to store restaurant details inc
 --->Prototypes
 Implemented user registration and authentication, including validation checks and secure data storage. Added browsing functionality for users to find restaurants and for admins to add new ones. Enabled connectivity to restaurant APIs for real-time updates.
 
+---Integration with Restaurant APIs: Establish integration with restaurant APIs to fetch real-time updates on table availability and menu changes. Implement error handling and retry mechanisms to ensure robust communication with external APIs.
 
 
 
