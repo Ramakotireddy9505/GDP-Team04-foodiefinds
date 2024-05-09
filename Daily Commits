@@ -118,4 +118,10 @@ We plan to save user data in Firebase.
 ----->Users Collection:
 Store user profiles with fields such as name, email, and other relevant information.
 Each document in this collection represents a user.
+Restaurants Collection:
+Store restaurant information including name, location, cuisine, ratings, and reviews.
+Each document in this collection represents a restaurant.
+Reviews Subcollection (within Restaurants Collection):
+Store reviews for each restaurant, including reviewer's ID, review content, rating, and timestamp.
+Each document in this subcollection represents a review for a specific restaurant
 
