@@ -125,3 +125,8 @@ Reviews Subcollection (within Restaurants Collection):
 Store reviews for each restaurant, including reviewer's ID, review content, rating, and timestamp.
 Each document in this subcollection represents a review for a specific restaurant
 
+------
+Reservations Collection:
+Store reservation details such as user ID, restaurant ID, date, time, and party size.
+Each document in this collection represents a reservation made by a user.
+
