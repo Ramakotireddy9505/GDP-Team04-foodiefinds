@@ -109,6 +109,11 @@ Integration with Restaurant APIs: Establish integration with restaurant APIs to 
 Implement error handling and retry mechanisms to ensure robust communication with external APIs.
 
 We plan to save user data in Firebase.
+1.Integrated Firebase into FoodieFinds app to enhance functionality and performance.
+2.Utilized Firebase Authentication for secure user authentication and account management.
+3.Leveraged Firebase Realtime Database for storage and retrieval of restaurant listings, reviews, and reservation data.
+4.Integrated Firebase Cloud Functions to handle server-side operations and real-time updates.
+5.Implemented Firebase Remote Config for dynamic app configurations.
 
 ----->Users Collection:
 Store user profiles with fields such as name, email, and other relevant information.
