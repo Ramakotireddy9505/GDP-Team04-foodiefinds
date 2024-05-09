@@ -110,3 +110,7 @@ Implement error handling and retry mechanisms to ensure robust communication wit
 
 We plan to save user data in Firebase.
 
+----->Users Collection:
+Store user profiles with fields such as name, email, and other relevant information.
+Each document in this collection represents a user.
+
