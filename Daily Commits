@@ -108,4 +108,5 @@ Implemented user registration and authentication, including validation checks an
 Integration with Restaurant APIs: Establish integration with restaurant APIs to fetch real-time updates on table availability and menu changes.
 Implement error handling and retry mechanisms to ensure robust communication with external APIs.
 
+We plan to save user data in Firebase.
 
