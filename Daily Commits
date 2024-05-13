@@ -131,3 +131,39 @@ Store reservation details such as user ID, restaurant ID, date, time, and party 
 Each document in this collection represents a reservation made by a user.
 
 Firebase Firestore is often referred to as a NoSQL database, specifically a document-oriented database. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----->Feature Prioritization:
+
+Identifying key features like restaurant discovery and fast loading highlights a strategic focus on essential functionalities, ensuring efficient resource utilization.
+
+----->Resource Allocation:
+
+Planning for effective data management reflects proactive resource allocation, enabling team members to work efficiently with the right tools and minimizing the risk of information loss.
+
