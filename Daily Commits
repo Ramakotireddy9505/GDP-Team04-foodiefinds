@@ -132,7 +132,12 @@ Each document in this collection represents a reservation made by a user.
 
 Firebase Firestore is often referred to as a NoSQL database, specifically a document-oriented database. 
 
+Outline of thr project-----Our project focuses on developing a user-friendly web application for restaurant discovery and dining reservations. 
+                           By leveraging advanced technologies and best practices in UX/UI design, we aim to create a seamless experience for users.
+                           Key features include user registration, restaurant browsing, review reading, reservation management, and personalized recommendations
 
+Abou the project-------Discover nearby restaurants, read reviews, and book tables hassle-free with Foodie Finds.
+                        Get real-time updates and personalized suggestions for a seamless dining experience. 
 
 
 
