@@ -130,3 +130,4 @@ Reservations Collection:
 Store reservation details such as user ID, restaurant ID, date, time, and party size.
 Each document in this collection represents a reservation made by a user.
 
+Firebase Firestore is often referred to as a NoSQL database, specifically a document-oriented database. 
