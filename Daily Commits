@@ -136,15 +136,22 @@ Outline of thr project-----Our project focuses on developing a user-friendly web
                            By leveraging advanced technologies and best practices in UX/UI design, we aim to create a seamless experience for users.
                            Key features include user registration, restaurant browsing, review reading, reservation management, and personalized recommendations
 
-Abou the project-------Discover nearby restaurants, read reviews, and book tables hassle-free with Foodie Finds.
+About the project-------Discover nearby restaurants, read reviews, and book tables hassle-free with Foodie Finds.
                         Get real-time updates and personalized suggestions for a seamless dining experience. 
+
+Problem Statement------In today's busy world, it's hard to find a great place to eat. There are so many choices, and it's tough to know which ones are good. Plus, 
+                        booking a table can be a hassle with all the different websites and apps. This makes it frustrating for both diners and restaurants. We need a 
+                        simple solution that helps people find delicious restaurants easily and book tables without any stress.
+
 
 
 
 Functional requirements and non functional requirements are necessary in order to  fullfill the project goals.FoodieFinds is very useful for users inorder to get the best food in the restaurant.
 
 
-
+Proposed Solution----- 	We're creating Foodie Finds, an easy-to-use app that helps you find great restaurants and book tables hassle-free. With Foodie Finds, you can discover nearby eateries based 
+                        on your tastes and see real-time menu and table availability updates. The app will also give personalized recommendations based on your dining.
+                        Foodie Finds makes finding and enjoying delicious meals simple and fun!
 
 
 
