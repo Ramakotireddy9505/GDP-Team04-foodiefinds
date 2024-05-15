@@ -171,6 +171,10 @@ update the functional requirments to final one
 --->Discussed with client and filtered  the functional requirements  and proposed  protytypes
 
 --->Added few points in the use cases and updated the use cases iteration-2 and prepared documentation for that. 
+--- In our project FoodieFinds adds functionality for admins to add reviews for restaurants within the application. Admins now have access to a restaurant management 
+interface where they can input and submit reviews for the restaurants they have added. This feature enhances the administrative capabilities of the application, allowing 
+admins to provide feedback and insights on the restaurants listed in the app.
+
 
 
 
