@@ -204,6 +204,17 @@ Check Layout and Functionality: Verify that all elements are correctly displayed
 3. Confirm that the search bar accepts input and that filters work as expected.
 
 
+-- List the tasks that you were assigned for the week
+This week, I was assigned the task of designing and developing the restaurant profile pages for the FoodieFinds app. My job included creating sections on these pages to display restaurant photos, menus, reviews, and ratings. Additionally, I needed to integrate a "Make a Reservation" button that connects to the reservation system.
+For each task, link the commit or commits that completes the task
+Commit link: https://github.com/Ramakotireddy9505/GDP-Team04-foodiefinds/tree/mainLinks to an external site.Links to an external site.
+
+-- Explain how you can verify that the tasks you were assigned were completed
+To verify that I completed my tasks, I would first check the design to make sure it looks good and meets the project's requirements. 
+Then, I would test each section of the profile page to ensure that the photos, menus, and reviews are displayed correctly. I’d also click the "Make a Reservation" button to confirm that it works and takes the user to the reservation system. Next, I would test the profile pages on different devices and browsers to ensure they work well everywhere. 
+After that, I’d get feedback from users or stakeholders to see if any changes are needed. Finally, I will talk with my project teammates and discuss the task I have done.
+
+
 
 
 
