@@ -223,19 +223,19 @@ Database schema to store restaurant information.
 Backend logic for processing and updating restaurant data from the APIs.
 
 To ensure everything is set up correctly with the restaurant APIs, follow these steps:
-1.	API Connection
-o	Review Documentation: Make sure you understand the API details.
-o	Test Connections: Check if the API is fetching data properly and if all endpoints are working.
-o	Handle Errors: Confirm that errors are managed well.
-2.	Database Schema
-o	Design Schema: Create tables for restaurant details, table availability, and menu updates.
-o	Implement Schema: Verify the schema is set up correctly with the right data types and constraints.
-o	Check Data Integrity: Ensure data can be inserted, updated, and deleted without issues.
-3.	Backend Logic
+1.API Connection
+    Review Documentation: Make sure you understand the API details.
+    Test Connections: Check if the API is fetching data properly and if all endpoints are working.
+    Handle Errors: Confirm that errors are managed well.
+2.Database Schema
+  	Design Schema: Create tables for restaurant details, table availability, and menu updates.
+    Implement Schema: Verify the schema is set up correctly with the right data types and constraints.
+    Check Data Integrity: Ensure data can be inserted, updated, and deleted without issues.
+3.Backend Logic
    Fetch Data: Ensure the backend correctly retrieves and processes API data.
    Store Data: Confirm that the data is saved and updated correctly in the database.
    Sync Data: Make sure data updates from the API are handled without causing inconsistencies.
-4.	Testing
+4.Testing
   Unit Testing: Test individual components like API connections and data handling.
   Integration Testing: Check how different parts work together.
   End-to-End Testing: Ensure the whole process, from fetching to updating data, works smoothly.
