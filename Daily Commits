@@ -239,7 +239,20 @@ o	Check Data Integrity: Ensure data can be inserted, updated, and deleted withou
   Unit Testing: Test individual components like API connections and data handling.
   Integration Testing: Check how different parts work together.
   End-to-End Testing: Ensure the whole process, from fetching to updating data, works smoothly.
+List the tasks that you were assigned for the week
+For this week, I was assigned the following tasks:
+1. Create Postman Collections: Set up collections in Postman for API requests related to restaurant and reservation data.
+2. Develop and Test API Request: Build and test POST, GET, PUT, and DELETE requests to handle different data operations.
+3. Validate Data Operations: Check that the data is correctly stored, retrieved, updated, and deleted in the database by reviewing the responses from Postman.
+4. Document API Endpoints: Write clear documentation in Postman for each API endpoint, including their expected inputs and outputs.
+Explain how you can verify that the tasks you were assigned were completed
+To verify that I completed the task of storing and managing data using Postman, I would do the following:
+1. Create and Test API Requests: I would set up the POST, GET, PUT, and DELETE requests in Postman to manage restaurant and reservation data. Then, I’d run these requests to ensure they work correctly.
+2. Check Data in the Database: After running the requests, I would look at the database to make sure the data is being correctly stored, retrieved, updated, and deleted. For example, I’d confirm that adding new restaurant data with a POST request saves it correctly, and that GET, PUT, and DELETE requests work as expected.
+3. Review the Responses: I would check the responses in Postman to ensure they show the correct status codes and information, confirming that the operations were successful.
+4. Review Documentation: Finally, I would ensure that all API endpoints and their details are clearly documented in Postman, making it easy to understand and use later.
 
+ 
 
 
 
