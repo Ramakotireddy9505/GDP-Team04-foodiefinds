@@ -193,6 +193,17 @@ Added  the software requirement Specification  and updated the wiki.
 - Completed the seed data and learned how to seed the JSON data into the firebase.
 
 
+1. List the tasks that you were assigned for the week
+Design the Layout: Create a basic layout for the restaurant search and filtering interface.
+Develop the HTML Structure: Write the HTML code for the search bar, filters, and results section.
+Add Basic CSS Styling: Apply initial CSS styles to layout the search bar, filters, and results section (basic styling only).
+Check Layout and Functionality: Verify that all elements are correctly displayed and aligned on the page.
+2. Explain how you can verify that the tasks you were assigned were completed
+1. Basic Page Load: Open the page in a browser to ensure everything is displayed correctly.
+2. Basic Interaction Test: Enter a location, select some filters, and ensure the inputs are captured without errors.
+3. Confirm that the search bar accepts input and that filters work as expected.
+
+
 
 
 
