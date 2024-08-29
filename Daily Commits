@@ -207,7 +207,7 @@ Check Layout and Functionality: Verify that all elements are correctly displayed
 -- List the tasks that you were assigned for the week
 This week, I was assigned the task of designing and developing the restaurant profile pages for the FoodieFinds app. My job included creating sections on these pages to display restaurant photos, menus, reviews, and ratings. Additionally, I needed to integrate a "Make a Reservation" button that connects to the reservation system.
 For each task, link the commit or commits that completes the task
-Commit link: https://github.com/Ramakotireddy9505/GDP-Team04-foodiefinds/tree/mainLinks to an external site.Links to an external site.
+
 
 -- Explain how you can verify that the tasks you were assigned were completed
 To verify that I completed my tasks, I would first check the design to make sure it looks good and meets the project's requirements. 
@@ -215,6 +215,30 @@ Then, I would test each section of the profile page to ensure that the photos, m
 After that, I’d get feedback from users or stakeholders to see if any changes are needed. Finally, I will talk with my project teammates and discuss the task I have done.
 
 
+1.This week I am supposed to Build the Restaurant Data API Integration
+Description: Set up and manage the back-end connection with restaurant APIs to fetch real-time data like table availability, menu updates, and restaurant details. Ensure the data is stored and updated efficiently in the database.
+Deliverables:
+API connection setup for retrieving restaurant data.
+Database schema to store restaurant information.
+Backend logic for processing and updating restaurant data from the APIs.
+
+To ensure everything is set up correctly with the restaurant APIs, follow these steps:
+1.	API Connection
+o	Review Documentation: Make sure you understand the API details.
+o	Test Connections: Check if the API is fetching data properly and if all endpoints are working.
+o	Handle Errors: Confirm that errors are managed well.
+2.	Database Schema
+o	Design Schema: Create tables for restaurant details, table availability, and menu updates.
+o	Implement Schema: Verify the schema is set up correctly with the right data types and constraints.
+o	Check Data Integrity: Ensure data can be inserted, updated, and deleted without issues.
+3.	Backend Logic
+   Fetch Data: Ensure the backend correctly retrieves and processes API data.
+   Store Data: Confirm that the data is saved and updated correctly in the database.
+   Sync Data: Make sure data updates from the API are handled without causing inconsistencies.
+4.	Testing
+  Unit Testing: Test individual components like API connections and data handling.
+  Integration Testing: Check how different parts work together.
+  End-to-End Testing: Ensure the whole process, from fetching to updating data, works smoothly.
 
 
 
