@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ozark Delight</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .hero-section {
+            position: relative;
+            background-image: url("https://res.cloudinary.com/dv1kx7wef/image/upload/v1730293262/foods-1_v7yjea.png");
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        .hero-content {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+        }
+        .hero-content h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        .rating {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        .info-section, .menu-section, .reviews-section {
+            margin-top: 20px;
+        }
+        .info-section h2, .menu-title, .reviews-title {
+            font-size: 2em;
+            margin: 10px 0;
+        }
+        .info-section .info-item {
+            margin: 10px 0;
+        }
+        .menu-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .food-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: calc(33% - 20px);
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .food-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .food-content {
+            padding: 15px;
+        }
+        .food-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .food-name {
+            font-size: 1.2em;
+            margin: 0;
+        }
+        .food-price {
+            color: #333;
+            font-weight: bold;
+        }
+        .food-category {
+            font-size: 0.9em;
+            color: #666;
+        }
+        .reviews-section .review {
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .review-user {
+            font-weight: bold;
+        }
+        .review-rating {
+            color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1>Ozark Delight</h1>
+                <div class="rating">⭐ 4.3</div>
+            </div>
+        </div>
+
+        <!-- Info Section -->
+        <div class="info-section">
+            <h2>Information</h2>
+            <div class="info-item"><strong>Address:</strong> 250 Lakeshore Dr, Branson, MO</div>
+            <div class="info-item"><strong>Contact Number:</strong> 573-555-0256</div>
+            <div class="info-item"><strong>Opening Hours:</strong> 9:00 AM - 9:00 PM</div>
+            <div class="info-item"><strong>Type:</strong> Both</div>
+            <div class="info-item"><strong>Feedback:</strong> Cozy atmosphere with a variety of food options.</div>
+        </div>
+
+        <!-- Menu Section -->
+        <div class="menu-section">
+            <h2 class="menu-title">Menu</h2>
+            <div class="menu-grid">
+                <!-- Veggie Omelette -->
+                <div class="food-card">
+                    <img src="https://res.cloudinary.com/dv1kx7wef/image/upload/v1730288553/1_atrvjc.png" alt="Veggie Omelette" class="food-image">
+                    <div class="food-content">
+                        <div class="food-header">
+                            <h3 class="food-name">Veggie Omelette</h3>
+                            <p class="food-price">$7.99</p>
+                        </div>
+                        <p>A delicious omelette filled with fresh vegetables and cheese.</p>
+                        <span class="food-category">Veg</span>
+                    </div>
+                </div>
+
+                <!-- Turkey Club Sandwich -->
+                <div class="food-card">
+                    <img src="https://res.cloudinary.com/dv1kx7wef/image/upload/v1730288553/2_insxbc.png" alt="Turkey Club Sandwich" class="food-image">
+                    <div class="food-content">
+                        <div class="food-header">
+                            <h3 class="food-name">Turkey Club Sandwich</h3>
+                            <p class="food-price">$8.99</p>
+                        </div>
+                        <p>Triple-layered sandwich with turkey, lettuce, and mayo.</p>
+                        <span class="food-category">Non-Veg</span>
+                    </div>
+                </div>
+
+                <!-- Garden Salad -->
+                <div class="food-card">
+                    <img src="https://res.cloudinary.com/dv1kx7wef/image/upload/v1730288554/3_kqcj8f.png" alt="Garden Salad" class="food-image">
+                    <div class="food-content">
+                        <div class="food-header">
+                            <h3 class="food-name">Garden Salad</h3>
+                            <p class="food-price">$5.99</p>
+                        </div>
+                        <p>Fresh greens with cherry tomatoes and cucumbers.</p>
+                        <span class="food-category">Veg</span>
+                    </div>
+                </div>
+
+                <!-- Beef Tacos -->
+                <div class="food-card">
+                    <img src="https://res.cloudinary.com/dv1kx7wef/image/upload/v1730288556/4_zvfcvj.png" alt="Beef Tacos" class="food-image">
+                    <div class="food-content">
+                        <div class="food-header">
+                            <h3 class="food-name">Beef Tacos</h3>
+                            <p class="food-price">$10.99</p>
+                        </div>
+                        <p>Spicy beef tacos with fresh salsa and guacamole.</p>
+                        <span class="food-category">Non-Veg</span>
+                    </div>
+                </div>
+
+                <!-- French Toast -->
+                <div class="food-card">
+                    <img src="https://res.cloudinary.com/dv1kx7wef/image/upload/v1730288558/5_zt2iaj.png" alt="French Toast" class="food-image">
+                    <div class="food-content">
+                        <div class="food-header">
+                            <h3 class="food-name">French Toast</h3>
+                            <p class="food-price">$6.99</p>
+                        </div>
+                        <p>Golden-brown French toast with maple syrup.</p>
+                        <span class="food-category">Veg</span>
+                    </div>
+                </div>
+
+                <!-- Chicken Caesar Wrap -->
+                <div class="food-card">
+                    <img src="https://res.cloudinary.com/dv1kx7wef/image/upload/v1730288561/6_gkqeut.png" alt="Chicken Caesar Wrap" class="food-image">
+                    <div class="food-content">
+                        <div class="food-header">
+                            <h3 class="food-name">Chicken Caesar Wrap</h3>
+                            <p class="food-price">$9.99</p>
+                        </div>
+                        <p>Grilled chicken with Caesar dressing in a wrap.</p>
+                        <span class="food-category">Non-Veg</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reviews Section -->
+        <div class="reviews-section">
+            <h2 class="reviews-title">Customer Reviews</h2>
+            <div class="review">
+                <p class="review-user">Alice</p>
+                <p class="review-rating">⭐ 5</p>
+                <p class="review-comment">Love the fresh options!</p>
+            </div>
+            <div class="review">
+                <p class="review-user">Bob</p>
+                <p class="review-rating">⭐ 4</p>
+                <p class="review-comment">Great place for brunch.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(../assets/bg1.png);
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Center the Container */
+.container {
+    min-width: 400px;
+    max-width: 600px;
+    padding-top: 10%;
+    padding: 20px;
+    background-color: #f2dc4cd7;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header Styling */
+h1 {
+    text-align: center;
+    color: #0b0b0b;
+
+    text-decoration: solid underline;
+}
+
+/* Form Group Styling */
+.form-group {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Label Styling */
+label {
+    color: #0e0e0e;
+    font-weight: bold;
+    flex: 1;
+    margin-right: 10px;
+}
+
+/* Input Field Styling */
+input {
+    flex: 2;
+    padding: 10px;
+    border: 1px solid #0f0f0f;
+    border-radius: 3px;
+    width: 100% !important;
+    box-sizing: border-box; /* Ensure padding is inside the width */
+}
+
+/* Password Group for Toggle Icon */
+.password-group {
+    position: relative;
+    width: 100%;
+}
+
+.password-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #999;
+}
+
+/* Forgot Password Link */
+.forgot-password {
+    text-align: left;
+    margin-top: 10px;
+    color: #8c8c8c;
+}
+.forgot-password:hover{
+    color: blue;
+}
+
+/* Submit Button */
+button {
+    width: 100%;
+    background-color: #3395ff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0062cc;
+}
+
+/* Mobile Viewport Adjustments */
+@media (max-width: 375px) { 
+    .container {
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+    }
+}

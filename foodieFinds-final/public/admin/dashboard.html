@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- 
+    - google font link
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Rubik:wght@400;500;600;700&family=Shadows+Into+Light&display=swap"
+        rel="stylesheet">
+
+    <!-- 
+        - preload images
+    -->
+    <link rel="preload" as="image" href="./assets/images/hero-banner.png" media="min-width(768px)">
+    <link rel="preload" as="image" href="./assets/images/hero-banner-bg.png" media="min-width(768px)">
+    <link rel="preload" as="image" href="./assets/images/hero-bg.jpg">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./scripts/authenticate.js"></script>
+    <script>
+        function logout(){
+            localStorage.clear()
+            window.location.reload(true)
+        }
+    </script>
+</head>
+<body>
+    
+    <header class="header" data-header>
+        <div class="menu-icon">
+            <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+        </div>
+        <div class="container">
+    
+          <h1 style="position: absolute; margin-left: 4%; left: 40px ;">
+            <a href="#" class="logo">FOODIEFINDS<span class="span">.</span></a>
+          </h1>
+          <div class="side-nav">
+               
+            <ul  id="menuList">
+                <li><a href="#" class="side-ele">Favorites</a></li>
+                <li><a href="#" class="side-ele">Orders</a></li>
+                <li><a href="#" class="side-ele">Sevices</a></li>
+            </ul>
+        </div>
+    
+          <nav class="navbar" data-navbar>
+            <ul class="navbar-list">
+    
+              <li class="nav-item">
+                <a href="#" class="navbar-link" data-nav-link>Dashboard</a>
+              </li>
+    
+              <li class="nav-item">
+                <a href="./restaurants.html" class="navbar-link" data-nav-link>Restaurants</a>
+              </li>
+    
+              <li class="nav-item">
+                <a href="users.html" class="navbar-link" data-nav-link>Users</a>
+              </li>
+              <li class="nav-item">
+                <a href="reservations.html" class="navbar-link" data-nav-link>Reservations</a>
+              </li>
+    
+            </ul>
+          </nav>
+    
+          <div class="header-btn-group">
+            <button class="search-btn" aria-label="Search" data-search-btn>
+              <ion-icon name="search-outline"></ion-icon>
+            </button>
+    
+            <button class="btn btn-hover" onclick="logout()">Logout</button>
+    
+            <button class="nav-toggle-btn" aria-label="Toggle Menu" data-menu-toggle-btn>
+              <span class="line top"></span>
+              <span class="line middle"></span>
+              <span class="line bottom"></span>
+            </button>
+          </div>
+    
+        </div>
+    </header>
+
+    <h1 style="text-align: center;">Add Restaurant</h1>
+    <section class="body">
+        <div id="main-container">
+            <div id="image-container">
+                <img id="image" src="./assets/download.png" alt="Restaurant Icon">
+            </div>
+            <div id="form-container">
+                <form id="form">
+                    <div class="form-group">
+                        <label for="restaurantName">Restaurant Name</label>
+                        <input type="text" name="restaurantName" id="restaurantName" placeholder="Enter restaurant name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="restaurantType">Select Type</label>
+                        <div class="rating-group" name="restaurantType" id="restaurantType">
+                            <input type="radio" id="type1" value="Veg" name="restaurantType">
+                            <label for="type1">Veg</label>
+                            <input type="radio" id="type2" value="Non-veg" name="restaurantType">
+                            <label for="type2">Non-veg</label>
+                            <input type="radio" id="type3" value="Both" name="restaurantType">
+                            <label for="type3">Both</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactNumber">Contact Number</label>
+                        <input type="text" name="contactNumber" id="contactNumber" placeholder="Enter contact number" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="imageFile">Upload Restaurant Image</label>
+                        <input type="file" name="imageFile" id="imageFile" accept="image/*" onchange="changeimg()">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Restaurant Address</label>
+                        <input type="text" name="address" id="address" placeholder="Enter restaurant address" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="openingHours">Opening Hours</label>
+                        <input type="text" name="openingHours" id="openingHours" placeholder="Enter Opening Hours" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rating">Rating</label>
+                        <div class="rating-group" name="rating" id="rating">
+                            <input type="radio" id="btn1" value="1" name="rating">
+                            <label for="btn1"><ion-icon name="star"></ion-icon></label>
+                            <input type="radio" id="btn2" value="2" name="rating">
+                            <label for="btn2"><ion-icon name="star"></ion-icon></label>
+                            <input type="radio" id="btn3" value="3" name="rating">
+                            <label for="btn3"><ion-icon name="star"></ion-icon></label>
+                            <input type="radio" id="btn4" value="4" name="rating">
+                            <label for="btn4"><ion-icon name="star"></ion-icon></label>
+                            <input type="radio" id="btn5" value="5" name="rating">
+                            <label for="btn5"><ion-icon name="star"></ion-icon></label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="feedback">Feedback</label>
+                        <textarea id="feedback" name="feedback" placeholder="Enter restaurant feedback" rows="4" required></textarea>
+                    </div>
+
+                    <button type="submit" class="addRest">Add Restaurant</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer class="footer bg-dark" id="footer" style="bottom: 0 !important;">
+        <div class="social" style="display: flex; justify-content: center; gap: 10px; margin: 10px;">
+          <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook fa-2x"></i></a>
+              <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+              <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
+              <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+        </div>
+        <p>Contact @ Foodiefinds</p>
+    </footer>
+    <script>
+        const file = document.getElementById('imageFile');
+        const imgContainer = document.getElementById('image');
+        let menuList = document.getElementById("menuList")
+        menuList.style.maxHeight = "0px";
+
+        function toggleMenu(){
+            if(menuList.style.maxHeight == "0px")
+            {
+                menuList.style.maxHeight = "300px";
+            }
+            else{
+                menuList.style.maxHeight = "0px";
+            }
+        }
+
+        function changeimg() {
+            if (file.files.length > 0) {
+                const selectedImage = file.files[0];
+                const objectURL = URL.createObjectURL(selectedImage);
+                imgContainer.src = objectURL;
+            }
+        }
+
+    </script>
+    <script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
+    <script src="./scripts/script.js"></script>
+    <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

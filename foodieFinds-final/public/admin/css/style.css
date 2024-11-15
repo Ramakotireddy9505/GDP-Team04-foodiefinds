@@ -1,0 +1,114 @@
+.body {
+    background-color: transparent; 
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-container {
+    display: flex;
+    width: 70%; 
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px; 
+    margin-top: 5%;
+    height: auto;
+    margin-bottom: 5%;
+}
+
+#image-container {
+    width: 30%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#image {
+    width: 300px; 
+    height: 200px; 
+    object-fit: contain;
+}
+
+#form-container {
+    width: 60%; 
+    padding: 20px;
+    margin: 2%;
+    
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input[type="text"],.form-group input[type="file"],.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 2rem !important;
+    transition: all 0.2s ease-in-out;
+    margin-top: 10px;
+    
+}
+
+.form-group input[type="text"]:focus,.form-group input[type="file"]:focus,.form-group textarea {
+    border-color: #f5c469;
+    outline: none;
+    box-shadow: 0 0 5px rgba(245, 196, 105, 0.5);
+}
+
+.addRest {
+    background-color: #ff9100;
+    width: 40%;
+    margin-left: 125px;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.addRest:hover {
+    background-color: #ffa200;
+}
+
+
+.rating-group input[type="radio"] {
+    display: none; /* Hide the default radio button */
+}
+
+.rating-group label {
+    display: inline-block;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.rating-group input[type="radio"]:checked + label {
+    background-color: #ff9100; /* Selected background color */
+    color: white; /* Selected text color */
+    border-color: #ff9100; /* Border color when selected */
+}
+
+.rating-group label:hover {
+    background-color: #ffa200; /* Hover background color */
+    border-color: #ffa200; /* Hover border color */
+}

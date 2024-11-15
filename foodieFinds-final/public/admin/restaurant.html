@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+
+        .checked {
+            color: orange !important;
+        }
+
+        .fa-star {
+            color: lightgray;
+        }
+
+        #foods-container, #reviews-container {
+            margin-top: 20px;
+        }
+
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 99;
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto; /* 15% from the top and centered */
+            padding: 60px;
+            border: 1px solid #888;
+            width: 400px; /* Could be more or less, depending on screen size */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal h2 {
+            margin: 0 0 20px;
+            font-size: 24px;
+        }
+
+        .modal .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .modal .close:hover,
+        .modal .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .add-food-btn {
+            background-color: #2980b9;
+            color: white;
+            padding: 5px 3px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            float: left;
+            margin: 10px 0px 10px 5px;
+            padding: 5px 10px;
+        }
+
+        .add-food-btn:hover {
+            background-color: #3498db;
+        }
+        .delete-food-btn{
+            color: white;
+            padding: 5px 3px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            float: left;
+            margin: 10px 0px 10px 10px;
+            background-color: #fb4955c5;
+        }
+        .delete-food-btn:hover{
+            color: rgb(255, 0, 0);
+            background-color: #dcdcdc;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .overlay h1 {
+            font-size: 2.5rem;
+        }
+
+        .rating {
+            font-size: 1.5rem;
+            margin-top: 10px;
+        }
+
+        .info-section {
+            display: grid;
+            gap: 15px;
+            padding: 20px;
+            max-width: 400px;
+            margin: auto;
+        }
+
+        .info-section i {
+            color: #007BFF;
+            margin-right: 10px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .food-card {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .food-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .food-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .food-info {
+            padding: 10px;
+        }
+
+        .food-info h4 {
+            margin: 5px 0;
+        }
+
+        .price {
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 200px;
+            }
+            
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .info-container {
+            max-width: 100rem;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            padding: 2rem;
+            margin-top: -15rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .info-icon {
+            width: 3rem;
+            height: 3rem;
+            color: #ffffff;
+        }
+
+        .info-title {
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.25rem;
+        }
+
+        .info-text {
+            color: #ffffff;
+        }
+
+        .description {
+            margin-top: 2rem;
+            text-align: center;
+            color: #ffffff;
+            max-width: 48rem;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        .glass-card{
+            background: rgba(242, 71, 19, 0.284);
+            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+            backdrop-filter: blur( 20px );
+            -webkit-backdrop-filter: blur( 20px );
+            border-radius: 10px;
+            border: 1px solid rgba( 255, 255, 255, 0.18 );
+            padding: 20px;
+            top: -5%;
+            color: #333;
+        }
+
+        .reviews-section{
+            border: 1.2px #555 solid;
+            border-radius: 8px;
+            padding: 16px 8px;
+            box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+            margin: 60px;
+            margin-bottom: 50px !important;
+            margin-top: 50px !important;
+        }
+
+        .reviews-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+            background-color: #f7f7f7;
+            border-radius: 8px;
+        }
+
+        .review-card {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            width: calc(33.333% - 20px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .rating {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffcd06;
+        }
+        .section{ padding-block: 20px !important;}
+        .comment {
+            color: #555;
+            margin-top: 10px;
+        }
+
+        .animate-card {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s forwards ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .review-card {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .review-card {
+                width: 100%;
+            }
+        }
+
+        .add-food{
+        background-color: #cf245f;
+        background-image: linear-gradient(to bottom right, #fcd34d, #ef4444, #ec4899);
+        border: 0;
+        border-radius: .25rem;
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+        
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.75rem; /* 28px */
+        padding: 1rem 1.25rem;
+        text-align: center;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        margin: 10px 0px 10px 20px;
+      }
+ 
+        .add-food:hover {
+            box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+        }
+
+
+
+
+    </style>
+    <link rel="stylesheet" href="./css/main.css">
+    <!-- 
+    - google font link
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Rubik:wght@400;500;600;700&family=Shadows+Into+Light&display=swap"
+        rel="stylesheet">
+
+    <!-- 
+        - preload images
+    -->
+    <link rel="preload" as="image" href="./assets/images/hero-banner.png" media="min-width(768px)">
+    <link rel="preload" as="image" href="./assets/images/hero-banner-bg.png" media="min-width(768px)">
+    <link rel="preload" as="image" href="./assets/images/hero-bg.jpg">
+    <script src="./scripts/authenticate.js"></script>
+    <script>
+        function logout(){
+            localStorage.clear()
+            window.location.reload(true)
+        }
+    </script>
+     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    
+    <header class="header" data-header>
+        <div class="menu-icon">
+            <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+        </div>
+        <div class="container">
+    
+          <h1 style="position: absolute; margin-left: 4%; left: 40px ;">
+            <a href="#" class="logo">FOODIEFINDS<span class="span">.</span></a>
+          </h1>
+          <div class="side-nav">
+               
+            <ul  id="menuList">
+                <li><a href="#" class="side-ele">Favorites</a></li>
+                <li><a href="#" class="side-ele">Orders</a></li>
+                <li><a href="#" class="side-ele">Sevices</a></li>
+            </ul>
+        </div>
+    
+          <nav class="navbar" data-navbar>
+            <ul class="navbar-list">
+    
+                <li class="nav-item">
+                    <a href="dashboard.html" class="navbar-link" data-nav-link>Dashboard</a>
+                  </li>
+        
+                  <li class="nav-item">
+                    <a href="restaurants.html" class="navbar-link" data-nav-link>Restaurants</a>
+                  </li>
+        
+                  <li class="nav-item">
+                    <a href="#" class="navbar-link" data-nav-link>Users</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="reservations.html" class="navbar-link" data-nav-link>Reservations</a>
+                  </li>
+      
+              </ul>
+          </nav>
+    
+          <div class="header-btn-group">
+            <button class="search-btn" aria-label="Search" data-search-btn>
+              <ion-icon name="search-outline"></ion-icon>
+            </button>
+    
+            <button class="btn btn-hover" onclick="logout()">Logout</button>
+    
+            <button class="nav-toggle-btn" aria-label="Toggle Menu" data-menu-toggle-btn>
+              <span class="line top"></span>
+              <span class="line middle"></span>
+              <span class="line bottom"></span>
+            </button>
+          </div>
+    
+        </div>
+    </header>
+    <div id="restaurant-container"></div>
+     
+    <section class="section food-menu" id="food-menu">
+        <div class="container">
+        <p class="section-subtitle">Dishes</p>
+          <ul class="fiter-list">
+
+            <li>
+                <button class="filter-btn  active">Both</button>
+            </li>
+            <li>
+              <button class="filter-btn">Veg</button>
+            </li>
+
+            <li>
+              <button class="filter-btn">Non-Veg</button>
+            </li>
+          </ul>
+          <div id="foods-container">
+
+          </div>
+        </div>
+    </section>
+    <div class="reviews-section">
+        <h1 style="color: #000; text-align: center;">Reviews </h1>
+        <div id="reviews-container" ></div>
+    </div>
+    
+    <div class="search-container" data-search-container>
+
+        <div class="search-box">
+          <input type="search" id="searchItem" name="search" aria-label="Search here" placeholder="Type keywords here..."
+            class="search-input" onkeydown="if (event.key === 'Enter') { event.preventDefault();  searchFood(); }">
+    
+          <button class="search-submit" aria-label="Submit search" data-search-submit-btn onclick="searchFood()">
+            <ion-icon name="search-outline"></ion-icon>
+          </button>
+        </div>
+    
+        <button class="search-close-btn" aria-label="Cancel search" data-search-close-btn></button>
+    
+      </div>
+    <!-- Add Food Modal -->
+    <div id="addFoodModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAddFoodModal()">&times;</span>
+            <h2>Add Food Item</h2>
+            <form id="addFoodForm">
+                <input type="hidden" id="restaurantId" name="restaurantId">
+                <div class="form-group">
+                    <label for="foodName">Food Name:</label>
+                    <input type="text" id="foodName" name="foodName" required>
+                </div>
+                <div class="form-group">
+                    <label for="foodPrice">Price:</label>
+                    <input type="number" id="foodPrice" name="foodPrice" required>
+                </div>
+                <div class="form-group">
+                    <label for="foodDescription">Description:</label>
+                    <textarea id="foodDescription" name="foodDescription"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="category">Select Type</label>
+                    <div class="rating-group" name="category" id="category">
+                        <input type="radio" id="type1" value="Veg" name="category">
+                        <label for="type1">Veg</label>
+                        <input type="radio" id="type2" value="Non-veg" name="category">
+                        <label for="type2">Non-veg</label>
+                        <input type="radio" id="type3" value="Both" name="category">
+                        <label for="type3">Both</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="foodImage">Food Image:</label>
+                    <input type="file" id="foodImage" name="foodImage" accept="image/*" required>
+                </div>
+                <button style="margin-left: 25%; margin-top: 30px;" class="add-food" type="submit">Add Food Item</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer bg-dark" id="footer" style="bottom: 0 !important;">
+        <div class="social" style="display: flex; justify-content: center; gap: 10px; margin: 10px;">
+          <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook fa-2x"></i></a>
+              <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+              <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
+              <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+        </div>
+        <p>Contact @ Foodiefinds</p>
+    </footer>
+    <script>
+        let menuList = document.getElementById("menuList")
+        menuList.style.maxHeight = "0px";
+
+        function toggleMenu(){
+            if(menuList.style.maxHeight == "0px")
+            {
+                menuList.style.maxHeight = "300px";
+            }
+            else{
+                menuList.style.maxHeight = "0px";
+            }
+        }
+
+        const searchBtn = document.querySelector("[data-search-btn]");
+        const searchContainer = document.querySelector("[data-search-container]");
+        const searchSubmitBtn = document.querySelector("[data-search-submit-btn]");
+        const searchCloseBtn = document.querySelector("[data-search-close-btn]");
+
+        const searchBoxElems = [searchBtn, searchSubmitBtn, searchCloseBtn];
+
+        for (let i = 0; i < 3; i++) {
+        searchBoxElems[i].addEventListener("click", function () {
+            searchContainer.classList.toggle("active");
+            document.body.classList.toggle("active");
+        });
+        }
+    </script>
+    <script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
+    <script src="./scripts/restaurant.js"></script>
+    <script src="./scripts/addFood.js"></script>
+    <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie Finds</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            color: #4a4a4a;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .table-container {
+            width: 90%;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid #313131;
+            padding: 60px 120px;
+            margin-top: 100px;
+            margin-bottom: 50px;
+            overflow: scroll;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #4a4a4aca;
+            overflow: scroll;
+            height: auto;
+            margin-bottom: 50px !important;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4a90e2;
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 17px;
+        }
+
+        td {
+            background-color: #f9f9f9;
+            font-size: 16px;
+            color: #555;
+            position: relative;
+            transition: background-color 0.3s ease;
+        }
+        td:hover {
+            background-color: #acacac64;
+        }
+        .completed-btn{
+            color: #fff;
+            background-color: #129f85;
+            border: none;
+            padding: 8px 5px;
+            font-size: 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s;
+        }
+
+        .cancel-btn {
+            color: #fff;
+            background-color: #e74c3c;
+            border: none;
+            padding: 8px 15px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s;
+        }
+
+        .cancel-btn:hover {
+            background-color: #c0392b;
+            transform: scale(1.05);
+        }
+
+        tr {
+            transition: transform 0.2s ease;
+        }
+
+        tbody tr {
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+    <!-- 
+    - google font link
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Rubik:wght@400;500;600;700&family=Shadows+Into+Light&display=swap"
+        rel="stylesheet">
+
+    <!-- 
+        - preload images
+    -->
+    <link rel="preload" as="image" href="./assets/images/hero-banner.png" media="min-width(768px)">
+    <link rel="preload" as="image" href="./assets/images/hero-banner-bg.png" media="min-width(768px)">
+    <link rel="preload" as="image" href="./assets/images/hero-bg.jpg">
+    <script src="./scripts/authenticate.js"></script>
+    <script>
+        function logout(){
+            localStorage.clear()
+            window.location.reload(true)
+        }
+    </script>
+</head>
+<body>
+
+    <header class="header" data-header>
+        <div class="menu-icon">
+            <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+        </div>
+        <div class="container">
+    
+          <h1 style="position: absolute; margin-left: 4%; left: 40px ;">
+            <a href="#" class="logo">FOODIEFINDS<span class="span">.</span></a>
+          </h1>
+          <div class="side-nav">
+               
+            <ul  id="menuList">
+                <li><a href="#" class="side-ele">Favorites</a></li>
+                <li><a href="#" class="side-ele">Orders</a></li>
+                <li><a href="#" class="side-ele">Sevices</a></li>
+            </ul>
+        </div>
+    
+          <nav class="navbar" data-navbar>
+            <ul class="navbar-list">
+    
+                <li class="nav-item">
+                    <a href="dashboard.html" class="navbar-link" data-nav-link>Dashboard</a>
+                  </li>
+        
+                  <li class="nav-item">
+                    <a href="restaurants.html" class="navbar-link" data-nav-link>Restaurants</a>
+                  </li>
+        
+                  <li class="nav-item">
+                    <a href="users.html" class="navbar-link" data-nav-link>Users</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="navbar-link" data-nav-link>Reservations</a>
+                  </li>
+    
+            </ul>
+          </nav>
+    
+          <div class="header-btn-group">
+            <button class="search-btn" aria-label="Search" data-search-btn>
+              <ion-icon name="search-outline"></ion-icon>
+            </button>
+    
+            <button class="btn btn-hover" onclick="logout()">Logout</button>
+    
+            <button class="nav-toggle-btn" aria-label="Toggle Menu" data-menu-toggle-btn>
+              <span class="line top"></span>
+              <span class="line middle"></span>
+              <span class="line bottom"></span>
+            </button>
+          </div>
+    
+        </div>
+    </header>
+
+     <!-- 
+        - Reservations MENU
+      -->
+    <section style="display: flex; justify-content: center; align-items: center;">
+        <div class="table-container">
+            <h1>ALL Reservations</h1>
+            <table id="reservationsTable">
+                <thead>
+                    <tr>
+                        <th>Customer Name</th>
+                        <th>Number</th>
+                        <th>Date</th>
+                        <th>Time Slot</th>
+                        <th>Table Size</th>
+                        <th>Restaurant</th>
+                        <th>Contact Number</th>
+                        <th>Address</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+    </section>
+      
+    <footer class="footer bg-dark" id="footer" style="bottom: 0 !important; position: relative !important; top: 80px !important;">
+        <div class="social" style="display: flex; justify-content: center; gap: 10px; margin: 10px;">
+          <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook fa-2x"></i></a>
+              <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+              <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
+              <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+        </div>
+        <p>Contact @ Foodiefinds</p>
+    </footer>
+    <script>
+        let menuList = document.getElementById("menuList")
+        menuList.style.maxHeight = "0px";
+
+        function toggleMenu(){
+            if(menuList.style.maxHeight == "0px")
+            {
+                menuList.style.maxHeight = "300px";
+            }
+            else{
+                menuList.style.maxHeight = "0px";
+            }
+        }
+        
+    </script>
+    <script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
+    <script src="./scripts/reservation.js"></script>
+    
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie Finds</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            height: 100vh !important;
+            margin: 0;
+            overflow-y: scroll;
+        }
+
+        .containerr {
+            min-width: 500px;
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 30px !important;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        input[type="password"]:focus {
+            border-color: #007bff;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: auto;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            margin-top: 15px;
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+
+    </style>
+    <!-- 
+    - google font link
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Rubik:wght@400;500;600;700&family=Shadows+Into+Light&display=swap"
+        rel="stylesheet">
+
+    <!-- 
+        - preload images
+    -->
+    <link rel="preload" as="image" href="./assets/images/hero-banner.png" media="min-width(768px)">
+    <link rel="preload" as="image" href="./assets/images/hero-banner-bg.png" media="min-width(768px)">
+    <link rel="preload" as="image" href="./assets/images/hero-bg.jpg">
+    <script src="./scripts/authenticate.js"></script>
+    <script>
+        function logout(){
+            localStorage.clear()
+            window.location.reload(true)
+        }
+    </script>
+</head>
+<body>
+
+    <header class="header" data-header>
+        <div class="menu-icon">
+            <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+        </div>
+        <div class="container">
+    
+          <h1 style="position: absolute; margin-left: 4%; left: 40px ;">
+            <a href="#" class="logo">FOODIEFINDS<span class="span">.</span></a>
+          </h1>
+          <div class="side-nav">
+               
+            <ul  id="menuList">
+                <li><a href="#" class="side-ele">Favorites</a></li>
+                <li><a href="#" class="side-ele">Orders</a></li>
+                <li><a href="#" class="side-ele">Sevices</a></li>
+            </ul>
+        </div>
+    
+          <nav class="navbar" data-navbar>
+            <ul class="navbar-list">
+    
+              <li class="nav-item">
+                <a href="index.html" class="navbar-link" data-nav-link>Dashboard</a>
+              </li>
+    
+              <li class="nav-item">
+                <a href="reservations.html" class="navbar-link" data-nav-link>Reservations</a>
+              </li>
+              <li class="nav-item">
+                <a href="favourites.html" class="navbar-link" data-nav-link>Favourites</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="navbar-link nav-item-active" data-nav-link>Account</a>
+              </li>
+    
+            </ul>
+          </nav>
+    
+          <div class="header-btn-group">
+            <button class="search-btn" aria-label="Search" data-search-btn>
+              <ion-icon name="search-outline"></ion-icon>
+            </button>
+    
+            <button class="btn btn-hover" onclick="logout()">Logout</button>
+    
+            <button class="nav-toggle-btn" aria-label="Toggle Menu" data-menu-toggle-btn>
+              <span class="line top"></span>
+              <span class="line middle"></span>
+              <span class="line bottom"></span>
+            </button>
+          </div>
+    
+        </div>
+    </header>
+
+    <div class="containerr">
+        <h1>Account Settings</h1>
+        <form id="profileForm">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">New Password:</label>
+                <input type="password" id="password">
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword">
+            </div>
+            <button type="submit" class="btn">Save Changes</button>
+        </form>
+        <button id="deleteAccount" class="btn btn-danger">Delete Account</button>
+    </div>
+    <footer class="footer bg-dark" id="footer" style="bottom: 0 !important; position: absolute !important; margin-top: 40px !important;" >
+        <div class="social" style="display: flex; justify-content: center; gap: 10px; margin: 10px;">
+          <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook fa-2x"></i></a>
+              <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+              <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
+              <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+        </div>
+        <p>Contact @ Foodiefinds</p>
+    </footer>
+    <script>
+        let menuList = document.getElementById("menuList")
+        menuList.style.maxHeight = "0px";
+
+        function toggleMenu(){
+            if(menuList.style.maxHeight == "0px")
+            {
+                menuList.style.maxHeight = "300px";
+            }
+            else{
+                menuList.style.maxHeight = "0px";
+            }
+        }
+        
+    </script>
+    <script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
+    <script src="./scripts/account.js"></script>
+    
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

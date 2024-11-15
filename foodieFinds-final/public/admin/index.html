@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+
+        background-image: url(./bg1.jpg);
+        text-align: center;
+    }
+
+    .container {
+        max-width: 400px;
+        margin: 5% auto;
+        align-items: center;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding-right: 40px;
+    }
+
+    h1 {
+        text-align: center;
+        color: #0b0b0b;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 25px;
+        justify-content: space-around;
+    }
+    
+    .password-input {
+        position: relative;
+        width: 100%;
+        margin-right: 15px;
+
+    }
+
+    .icon {
+        padding: 10px;
+        color: black;
+        min-width: 60px;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .fa-lock {
+        font-size: 25px;
+    }
+
+
+    input {
+        width: 100%;
+        padding: 10px;
+        background-color: #e6e6e6;
+        outline: none;
+        border: none;
+        border-bottom: 2px solid rgb(25, 25, 26);
+    }
+
+    .forgot-password {
+        text-align: center;
+        margin-top: 10px;
+        margin: 5px 5px 20px 30px;
+    }
+
+    .toggle-password {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        /* Position the toggle at the end of the input */
+        transform: translateY(-50%);
+        cursor: pointer;
+        font-size: 18px;
+        color: #999;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        color: #0e0e0e;
+    }
+
+
+    .password-group {
+        position: relative;
+    }
+
+    .toggle-password {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        cursor: pointer;
+        font-size: 18px;
+        color: #999;
+    }
+
+    button {
+
+        background-color: #3395ff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #0062cc;
+    }
+
+    .forgot-password {
+        text-align: left;
+        margin-top: 10px;
+        color: #8c8c8c;
+    }
+
+    @media (max-width: 375px) {
+        .container {
+            background-color: transparent;
+            border: none;
+            box-shadow: none;
+
+        }
+    }
+</style>
+
+<body style="background-image: url('https://hips.hearstapps.com/hmg-prod/images/shondaland-foodseries-foodie-1595984368.png?crop=1xw:0.5625xh;center,top&resize=1200:*');">
+    <div class="container">
+        <h1>ADMIN LOGIN</h1>
+        <form id="login">
+            <div class="form-group" class="mail">
+                <label for="email"><i class="fa fa-envelope icon"></i></label>
+                <input class="mail-input" type="email" id="email" name="email" placeholder="Enter Mail" required>
+            </div>
+            <div class="form-group" class="password">
+                <label for="password"><i class="fa fa-key icon"></i></label>
+                <div class="password-input">
+                    <input type="password" id="password" name="password" placeholder="Enter Password" required>
+                </div>
+            </div>
+            <p class="forgot-password">Forgot password? <a href="reset-password.html">click here</a></p>
+            <p class="forgot-password">Don't have an account?<a href="register.html"> Register here</a></p>
+            <div class="form-group" id="submit-button">
+                <button type="submit">SUBMIT</button>
+            </div>
+
+        </form>
+    </div>
+    <script src="./scripts/login.js"></script>
+</body>
+
+</html>

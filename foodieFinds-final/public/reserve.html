@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Reservation</title>
+    <style>
+        /* Basic styling for a professional look */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #555;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Book a Table</h1>
+        <form id="reservationForm">
+            <label for="customerName">Name</label>
+            <input type="text" id="customerName" required>
+            
+            <label for="customerPhone">Phone</label>
+            <input type="tel" id="customerPhone" pattern="[0-9]{10}" required>
+
+            <label for="tableSize">Table Size</label>
+            <select id="tableSize" required>
+                <option value="">Select Table Size</option>
+                <option value="2">2 Seats</option>
+                <option value="4">4 Seats</option>
+                <option value="6">6 Seats</option>
+                <option value="12">12 Seats</option>
+            </select>
+
+            <label for="reservationDate">Reservation Date</label>
+            <input type="date" id="reservationDate" min="" max="" required>
+
+            <label for="timeSlot">Select Time Slot</label>
+            <select id="timeSlot" required>
+                <option value="" disabled>Select a time slot</option>
+            </select>
+
+            <button type="submit">Book Now</button>
+        </form>
+    </div>
+
+    <script>
+
+document.addEventListener('DOMContentLoaded', () => {
+    const reservationDateInput = document.getElementById('reservationDate');
+
+    // Set the min and max dates for reservation (today to 1 month from today)
+    const today = new Date();
+    reservationDateInput.min = today.toISOString().split('T')[0];
+    const oneMonthFromToday = new Date(today);
+    oneMonthFromToday.setMonth(oneMonthFromToday.getMonth() + 1);
+    reservationDateInput.max = oneMonthFromToday.toISOString().split('T')[0];
+
+    // Handle form submission
+    document.getElementById('reservationForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const reservationData = {
+            customerName: document.getElementById('customerName').value,
+            customerPhone: document.getElementById('customerPhone').value,
+            tableSize: parseInt(document.getElementById('tableSize').value),
+            reservationDate: document.getElementById('reservationDate').value,
+            reservationTime: document.getElementById('reservationTime').value,
+        };
+
+        try {
+            const response = await fetch('/api/reservations', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(reservationData),
+            });
+
+            const result = await response.json();
+            if (response.ok) {
+                alert(result.message);
+            } else {
+                alert(result.error || 'Failed to create reservation');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Error occurred. Please try again.');
+        }
+    });
+});
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie Finds</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- 
+    - google font link
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Rubik:wght@400;500;600;700&family=Shadows+Into+Light&display=swap"
+        rel="stylesheet">
+    <style>
+      body{
+        min-height: 100vh;
+        overflow: scroll;
+        overflow-x: hidden;
+      }
+    </style>
+
+    <!-- 
+        - preload images
+    -->
+    <link rel="preload" as="image" href="./assets/images/hero-banner.png" media="min-width(768px)">
+    <link rel="preload" as="image" href="./assets/images/hero-banner-bg.png" media="min-width(768px)">
+    <link rel="preload" as="image" href="./assets/images/hero-bg.jpg">
+    <script src="./scripts/authenticate.js"></script>
+    <script>
+        function logout(){
+            localStorage.clear()
+            window.location.reload(true)
+        }
+    </script>
+</head>
+<body>
+
+    <header class="header" data-header>
+        <div class="menu-icon">
+            <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+        </div>
+        <div class="container">
+    
+          <h1 style="position: absolute; margin-left: 4%; left: 40px ;">
+            <a href="#" class="logo">FOODIEFINDS<span class="span">.</span></a>
+          </h1>
+          <div class="side-nav">
+               
+            <ul  id="menuList">
+                <li><a href="#" class="side-ele">Favorites</a></li>
+                <li><a href="#" class="side-ele">Orders</a></li>
+                <li><a href="#" class="side-ele">Sevices</a></li>
+            </ul>
+        </div>
+    
+          <nav class="navbar" data-navbar>
+            <ul class="navbar-list">
+    
+              <li class="nav-item">
+                <a href="#" class="navbar-link nav-item-active" data-nav-link>Dashboard</a>
+              </li>
+    
+              <li class="nav-item">
+                <a href="reservations.html" class="navbar-link" data-nav-link>Reservations</a>
+              </li>
+              <li class="nav-item">
+                <a href="favourites.html" class="navbar-link" data-nav-link>Favourites</a>
+              </li>
+              <li class="nav-item">
+                <a href="account.html" class="navbar-link" data-nav-link>Account</a>
+              </li>
+    
+            </ul>
+          </nav>
+    
+          <div class="header-btn-group">
+            <button class="search-btn" aria-label="Search" data-search-btn>
+              <ion-icon name="search-outline"></ion-icon>
+            </button>
+    
+            <button class="btn btn-hover" onclick="logout()">Logout</button>
+    
+            <button class="nav-toggle-btn" aria-label="Toggle Menu" data-menu-toggle-btn>
+              <span class="line top"></span>
+              <span class="line middle"></span>
+              <span class="line bottom"></span>
+            </button>
+          </div>
+    
+        </div>
+    </header>
+      <!-- 
+    - #SEARCH BOX
+  -->
+
+  <div class="search-container" data-search-container>
+
+    <div class="search-box">
+      <input type="search" id="searchItem" name="search" aria-label="Search here" placeholder="Type keywords here..."
+        class="search-input" onkeydown="if (event.key === 'Enter') { event.preventDefault(); search(); }">
+
+      <button class="search-submit" aria-label="Submit search" data-search-submit-btn onclick="search()">
+        <ion-icon name="search-outline"></ion-icon>
+      </button>
+    </div>
+
+    <button class="search-close-btn" aria-label="Cancel search" data-search-close-btn></button>
+
+  </div>
+     <!-- 
+        - #Restaurants MENU
+      -->
+
+      <section class="section food-menu" id="food-menu">
+        <div class="container">
+
+          <p class="section-subtitle">Select Restaurant Type</p>
+
+          <ul class="fiter-list">
+
+            <li>
+              <button class="filter-btn  active">Both</button>
+            </li>
+            <li>
+              <button class="filter-btn">Veg</button>
+            </li>
+
+            <li>
+              <button class="filter-btn">Non-Veg</button>
+            </li>
+            <li>
+              <button class="filter-btn" style="border: 2px solid rgb(243, 97, 44) !important;">Rating</button>
+            </li>
+            <button onclick="sortRating('high')"><ion-icon class="arrows up" name="arrow-up-outline" ></ion-icon></button>
+            <button onclick="sortRating('low')"><ion-icon class="arrows down" name="arrow-down-outline" ></ion-icon></button>
+            
+          </ul>
+          <div id="restaurants-container">
+            
+          </div>
+          <ul class="food-menu-list" style="display: none;" hidden>
+
+            <li>
+              <div class="food-menu-card">
+
+                <div class="card-banner">
+                  <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmVzdGF1cmFudHxlbnwwfHwwfHx8MA%3D%3D" width="300" height="300" loading="lazy"
+                    alt="Fried Chicken Unlimited" class="w-100">
+
+                  
+                </div>
+
+                <div class="wrapper">
+                  <p class="category">Non-veg</p>
+
+                  <div class="rating-wrapper">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+                </div>
+
+                <h3 class="h3 card-title">Fried Chicken Unlimited</h3>
+
+                <div class="price-wrapper">
+
+                  <p class="price-text">Address:</p>
+
+                  <data class="price">Lake view, Missouri State</data>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+
+        </div>
+      </section>
+      <footer class="footer bg-dark" id="footer" style="bottom: 0 !important;">
+        <div class="social" style="display: flex; justify-content: center; gap: 10px; margin: 10px;">
+          <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook fa-2x"></i></a>
+              <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+              <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
+              <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+        </div>
+        <p>Contact @ Foodiefinds</p>
+    </footer>
+    <!-- End of Food menu -->
+    <script>
+        let menuList = document.getElementById("menuList")
+        menuList.style.maxHeight = "0px";
+
+        function toggleMenu(){
+            if(menuList.style.maxHeight == "0px")
+            {
+                menuList.style.maxHeight = "300px";
+            }
+            else{
+                menuList.style.maxHeight = "0px";
+            }
+        }
+
+        function sortRating( value) {
+          console.log("value ->",value)
+          const sortedRestaurants = [...restaurants];
+
+          sortedRestaurants.sort((a, b) => {
+              return value === 'high' ? b.rating - a.rating : a.rating - b.rating;
+          });
+
+          displayRestaurants(sortedRestaurants);
+        }
+        
+    </script>
+    <script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
+    <script src="./scripts/restaurants.js"></script>
+    <script src="./scripts/search.js"></script>
+    
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
